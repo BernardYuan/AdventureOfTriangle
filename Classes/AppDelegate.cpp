@@ -1,5 +1,4 @@
 #include "AppDelegate.h"
-//#include "Map1.h"
 #include "HelloWorldScene.h"
 
 USING_NS_CC;
@@ -36,12 +35,12 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto glview = director->getOpenGLView();
     if(!glview) {
         glview = GLViewImpl::create("My Game");
+        glview->setFrameSize(1024, 768);
         director->setOpenGLView(glview);
     }
 
-    glview->setDesignResolutionSize(1024, 768, ResolutionPolicy::FIXED_WIDTH);
     // turn on display FPS
-    director->setDisplayStats(false);
+    director->setDisplayStats(true);
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
@@ -50,7 +49,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // create a scene. it's an autorelease object
     auto scene = HelloWorld::createScene();
-
+    glview->setDesignResolutionSize(1024, 768, ResolutionPolicy::SHOW_ALL);
     // run
     director->runWithScene(scene);
 
@@ -68,7 +67,6 @@ void AppDelegate::applicationDidEnterBackground() {
 // this function will be called when the app is active again
 void AppDelegate::applicationWillEnterForeground() {
     Director::getInstance()->startAnimation();
-
     // if you use SimpleAudioEngine, it must resume here
     // SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 }
