@@ -1,5 +1,5 @@
 #include "StaticData.h"
-
+#include <iostream>
 USING_NS_CC;
 
 StaticData* StaticData::staticData = nullptr;

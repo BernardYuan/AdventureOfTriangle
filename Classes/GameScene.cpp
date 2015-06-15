@@ -1,6 +1,7 @@
 #include "GameScene.h"
 #include "GameManager.h"
 #include "HelloWorldScene.h"
+#include "MapAnalysis.h"
 USING_NS_CC;
 
 Scene* GameScene::createScene()
@@ -59,8 +60,8 @@ bool GameScene::init()
     pauseMenu->addChild(pauseBtn);
     
     //form the Map
-	//MapAnalysis* mapAnalysis = MapAnalysis::getInstance();
-	//mapAnalysis->initMap(level);
+	MapAnalysis* mapAnalysis = MapAnalysis::getInstance();
+	mapAnalysis->initMap((int)1); //YJQ DEBUG
 	hero = GameManager::getInstance()->hero;
     
     /*

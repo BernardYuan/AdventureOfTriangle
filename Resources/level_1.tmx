@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="1024" tileheight="768" nextobjectid="1">
+ <tileset firstgid="1" name="level_1" tilewidth="1024" tileheight="768">
+  <image source="level_1.png" width="1024" height="768"/>
+ </tileset>
+ <layer name="bk" width="1" height="1">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgAAAACAAC
+  </data>
+ </layer>
+ <objectgroup name="BrickLayer" width="60" height="20">
+  <object name="Floor" type="Floor" x="1" y="100" width="800" height="100"/>
+  <object name="Floor" type="Floor" x="800" y="100" width="224" height="160"/>
+ </objectgroup>
+ <objectgroup name="HeroLayer" width="60" height="20">
+  <object name="Hero" type="Hero" x="64" y="100" width="64" height="64"/>
+ </objectgroup>
+</map>

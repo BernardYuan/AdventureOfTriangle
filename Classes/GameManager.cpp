@@ -73,6 +73,45 @@ b2World* GameManager::getWorld() {
     return world;
 }
 
+void GameManager::initRes()
+{
+    std::string path = FileUtils::getInstance()->fullPathForFilename("load.xml");
+    ValueMap vm = FileUtils::getInstance()->getValueMapFromFile(path);
+    for (int i = 0; i < vm.size(); i++)
+    {
+        char buf[12];
+        sprintf(buf, "%d", i+1);
+        std::string s = vm.at(buf).asString();
+        SpriteFrameCache::getInstance()->addSpriteFramesWithFile(s);
+    }
+    vm.clear();
+}
+
+Animation* GameManager::getAnimation(const char* src, float delay, unsigned int loops)
+{
+    Vector<SpriteFrame*> frames;
+
+    char _src[30];
+    for(int i=0; i<10000; i++)
+    {
+        sprintf(_src, "%s%04d", src, i);
+        SpriteFrame* sf = SpriteFrameCache::getInstance()->getSpriteFrameByName(_src);
+        if(sf == nullptr)
+        {
+            log("%s is null\n",_src);
+            break;
+        }
+        frames.pushBack(sf);
+    }
+    return Animation::createWithSpriteFrames(frames, delay, loops);
+}
+
+cocos2d::Animate* GameManager::getAnimate(const char* src, float delay /*= 0.0f*/, unsigned int loops /*= 1U*/)
+{
+    Animation* animation = getAnimation(src, delay, loops);
+    return Animate::create(animation);
+}
+
 //loading animation frames
 /*void GameManager::initRes() {
     std::string path = FileUtils::getInstance()->fullPathForFilename("load.xml");

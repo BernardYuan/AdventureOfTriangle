@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">  
+<plist version="1.0"> 
+<dict>
+<!--英雄动画帧序列-->
+	<key>1</key>			<string>hero_walk_right.plist</string>
+	<key>2</key>			<string>hero_walk_left.plist</string>
+	<key>3</key>			<string>hero_stop.plist</string>
+    <key>4</key>			<string>hero_dead.plist</string>
+</dict>
+</plist>
