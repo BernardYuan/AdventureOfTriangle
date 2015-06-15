@@ -9,10 +9,10 @@
   </data>
  </layer>
  <objectgroup name="BrickLayer" width="60" height="20">
-  <object name="Floor" type="Floor" x="1" y="100" width="800" height="100"/>
-  <object name="Floor" type="Floor" x="800" y="100" width="224" height="160"/>
+  <object name="Floor" type="Floor" x="1" y="700" width="800" height="100"/>
+  <object name="Floor" type="Floor" x="777" y="640" width="224" height="160"/>
  </objectgroup>
  <objectgroup name="HeroLayer" width="60" height="20">
-  <object name="Hero" type="Hero" x="64" y="100" width="64" height="64"/>
+  <object name="Hero" type="Hero" x="770" y="0" width="64" height="64"/>
  </objectgroup>
 </map>

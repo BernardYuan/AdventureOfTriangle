@@ -13,7 +13,7 @@
 #include "cocos2d.h"
 #include "Hero.h"
 USING_NS_CC;
-class GameScene :public cocos2d::LayerColor
+class GameScene :public cocos2d::Layer
 {
 private:
     bool pause;
@@ -42,6 +42,9 @@ public:
     void settingBackCallback(cocos2d::Ref*);
     void settingExitCallback(cocos2d::Ref*);
     void menuPauseCallback(cocos2d::Ref* );
+    
+    void keyPressed(EventKeyboard::KeyCode,Event*);
+    void keyReleased(EventKeyboard::KeyCode,Event*);
     
 };
 

@@ -21,15 +21,17 @@ MapAnalysis* MapAnalysis::getInstance()
 void MapAnalysis::initMap(char* levelName)
 {
 	GameManager* gameManager = GameManager::getInstance();
-	//¶ÁÈ¡TiledµØÍ¼×ÊÔ´
+	//âˆ‚Â¡Â»Â°TiledÂµÃ¿Ã•Âºâ—ŠÂ â€˜Â¥
 	TMXTiledMap* tiledMap = TMXTiledMap::create(levelName);
 	gameManager->staticLayer->addChild(tiledMap, -1);
-	//todo--ÊÓ²î±³¾°£¬´Ë´¦ÐÞ¸Ä!TODO!ÔÆ²Ê
+	//todo--Â â€â‰¤Ã“Â±â‰¥Ã¦âˆžÂ£Â¨Â¥Ã€Â¥Â¶â€“ï¬âˆÆ’!TODO!â€˜âˆ†â‰¤Â 
 	Sprite* bkpic = Sprite::create("background.png");
-    bkpic->setPosition(0,715);
-	gameManager->bgLayer->addChild(bkpic);
-
-	//BrickLayer µØ°å   Spikes ·æ´Ì
+    bkpic->setAnchorPoint(Vec2(0,0));
+    bkpic->setPosition(0,0);
+	gameManager->staticLayer->addChild(bkpic);
+    bkpic->setGlobalZOrder(-100);
+    
+	//BrickLayer ÂµÃ¿âˆžÃ‚   Spikes âˆ‘ÃŠÂ¥Ãƒ
 	TMXObjectGroup* brickLayer = tiledMap->getObjectGroup("BrickLayer");
 	ValueVector bricks = brickLayer->getObjects();
 	for (int i = 0; i < bricks.size(); i++)
@@ -40,35 +42,35 @@ void MapAnalysis::initMap(char* levelName)
 		float x = brick.at("x").asFloat() + w/2.0f;
 		float y = brick.at("y").asFloat() + h/2.0f;
 
-		if (brick.at("name").asString() == "Floor")//Ì¨½×
+		if (brick.at("name").asString() == "Floor")//ÃƒÂ®Î©â—Š
 		{
 			Floor* b = Floor::create(x, y, w, h);
 			gameManager->bgLayer->addChild(b);
 		}
     }
-/*		if (brick.at("name").asString() == "Brick")//Ì¨½×
+/*		if (brick.at("name").asString() == "Brick")//ÃƒÂ®Î©â—Š
 		{
 			Brick* b = Brick::create(x, y, w, h);
 			gameManager->gameLayer->addChild(b);
 		}
-		else if (brick.at("name").asString() == "Wall")//Ç½
+		else if (brick.at("name").asString() == "Wall")//Â«Î©
 		{
 			Wall* wa = Wall::create(x, y, w, h);
 			gameManager->gameLayer->addChild(wa);
 		}
-		else if (brick.at("name").asString() == "Spikes")//·æ´Ì
+		else if (brick.at("name").asString() == "Spikes")//âˆ‘ÃŠÂ¥Ãƒ
 		{
 			Spikes* sk = Spikes::create(x, y, w, h);
 			gameManager->gameLayer->addChild(sk);
 		}
-		else if (brick.at("name").asString() == "DeadRoof")//ËÀÍöÌ¨½×
+		else if (brick.at("name").asString() == "DeadRoof")//Ã€Â¿Ã•Ë†ÃƒÂ®Î©â—Š
 		{
 			DeadRoof* dr = DeadRoof::create(x, y, w, h);
 			gameManager->gameLayer->addChild(dr);
 		}
 	}
 */
-/*	//CoinLayer ½ð±Ò
+/*	//CoinLayer Î©ï£¿Â±â€œ
 	TMXObjectGroup* coinLayer = tiledMap->getObjectGroup("CoinLayer");
 	ValueVector coins = coinLayer->getObjects();
 	for (int i = 0; i < coins.size(); i++)
@@ -82,13 +84,13 @@ void MapAnalysis::initMap(char* levelName)
 		Coin* c = Coin::create(x, y, w, h);
 		gameManager->thingLayer->addChild(c);
 	}
-	//MonsterLayer ¹ÖÎï
+	//MonsterLayer Ï€Ã·Å’Ã”
 	TMXObjectGroup* monsterLayer = tiledMap->getObjectGroup("MonsterLayer");
 	ValueVector monsters = monsterLayer->getObjects();
 	for (int i = 0; i < monsters.size(); i++)
 	{
 		ValueMap monster = monsters.at(i).asValueMap();
-		//MonsterEx ÈËÐÍ¹ÖÎï
+		//MonsterEx Â»Ã€â€“Ã•Ï€Ã·Å’Ã”
 		if (monster.at("name").asString() == "MonsterEx")
 		{
 			float w = SD_FLOAT("monster_float_width");
@@ -99,7 +101,7 @@ void MapAnalysis::initMap(char* levelName)
 			MonsterEx* m = MonsterEx::create(x, y, w, h);
 			gameManager->monsterLayer->addChild(m);
 		}
-		//FlyingSlime ·ÉÐÐÊ·À³Ä·
+		//FlyingSlime âˆ‘â€¦â€“â€“Â âˆ‘Â¿â‰¥Æ’âˆ‘
 		if (monster.at("name").asString() == "FlyingSlime")
 		{
 			float w = SD_FLOAT("flyingslime_float_width");
@@ -110,7 +112,7 @@ void MapAnalysis::initMap(char* levelName)
 			FlyingSlime* f = FlyingSlime::create(x, y, w, h);
 			gameManager->monsterLayer->addChild(f);
 		}
-		//Slime Ê·À³Ä·
+		//Slime Â âˆ‘Â¿â‰¥Æ’âˆ‘
 		if (monster.at("name").asString() == "Slime")
 		{
 			float w = SD_FLOAT("slime_float_width");
@@ -121,7 +123,7 @@ void MapAnalysis::initMap(char* levelName)
 			Slime* s = Slime::create(x, y, w, h);
 			gameManager->monsterLayer->addChild(s);
 		}
-		//£¡£¡£¡Bird Äñ  ÖÐÁ¢µÄ--------£¡£¡£¡£¡£¡
+		//Â£Â°Â£Â°Â£Â°Bird Æ’Ã’  Ã·â€“Â¡Â¢ÂµÆ’--------Â£Â°Â£Â°Â£Â°Â£Â°Â£Â°
 		if (monster.at("name").asString() == "Bird")
 		{
 			float w = SD_FLOAT("bird_float_width");
@@ -133,13 +135,13 @@ void MapAnalysis::initMap(char* levelName)
 			gameManager->monsterLayer->addChild(b);
 		}
 	}
-	//ArticleLayer ½»»¥ÎïÌå
+	//ArticleLayer Î©ÂªÂªâ€¢Å’Ã”ÃƒÃ‚
 	TMXObjectGroup* articleLayer = tiledMap->getObjectGroup("ArticleLayer");
 	ValueVector articles = articleLayer->getObjects();
 	for (int i = 0; i < articles.size(); i++)
 	{
 		ValueMap article = articles.at(i).asValueMap();
-		//Article ½»»¥ÎïÌå-Ïä×Ó
+		//Article Î©ÂªÂªâ€¢Å’Ã”ÃƒÃ‚-Å“â€°â—Šâ€
 		if (article.at("name").asString() == "Article")
 		{
 			float w = SD_FLOAT("article_float_width");
@@ -150,7 +152,7 @@ void MapAnalysis::initMap(char* levelName)
 			Article* a = Article::create(x, y, w, h);
 			gameManager->thingLayer->addChild(a);
 		}
-		//Door ÃÅ
+		//Door âˆšâ‰ˆ
 		if (article.at("name").asString() == "Door")
 		{
 			float w = SD_FLOAT("door_float_width");
@@ -161,7 +163,7 @@ void MapAnalysis::initMap(char* levelName)
 			Door* a = Door::create(x, y, w, h);
 			gameManager->thingLayer->addChild(a);
 		}
-		//JumpBoard Ìø°å
+		//JumpBoard ÃƒÂ¯âˆžÃ‚
 		if (article.at("name").asString() == "JumpBoard")
 		{
 			float w = SD_FLOAT("jump_float_width");
@@ -174,13 +176,13 @@ void MapAnalysis::initMap(char* levelName)
 		}
 	}
 */
-	//HeroLayer Ó¢ÐÛ
+	//HeroLayer â€Â¢â€“â‚¬
 	TMXObjectGroup* heroLayer = tiledMap->getObjectGroup("HeroLayer");
 	ValueVector heros = heroLayer->getObjects();
 	for (int i = 0; i < heros.size(); i++)
 	{
 		ValueMap hero = heros.at(i).asValueMap();
-		//Article ½»»¥ÎïÌå-Ïä×Ó
+		//Article Î©ÂªÂªâ€¢Å’Ã”ÃƒÃ‚-Å“â€°â—Šâ€
 		if (hero.at("name").asString() == "Hero")
 		{
 			float w = SD_FLOAT("hero_float_width");
@@ -190,7 +192,7 @@ void MapAnalysis::initMap(char* levelName)
 
 			Hero* e = Hero::create(x, y, w, h);
 			gameManager->objLayer->addChild(e);
-			//ÎÞµÐ1Ãë
+			//Å’ï¬Âµâ€“1âˆšÃŽ
 			//YJQ DEBUG e->setUnbeatable(1);
 			GameManager::getInstance()->hero = e;
 		}
