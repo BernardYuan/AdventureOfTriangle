@@ -6,13 +6,13 @@ re-encapsulation of cocos2d::Sprite with Box2D physics engine.
 As Time is quite limited, only two classes are completed: Hero and Floor
 
 #!!!!!TODO!!!!!!
-- button need to be put on   
+- button need to be put on
 - change the T’s A point  
 - give the bound of the map  
-- make a new map(longer! )   
-- death! (drop into water, encounter the obstacle, etc.) - and death scene   
+- make a new map(longer! )
+- death! (drop into water, encounter the obstacle, etc.) - and death scene
 - sound effect(Alternative)
-- logo, title and buttons(Alternative)
+- logo, title and buttons(Alternative)  done by Bernard
 
 #Todo:
 ##杨家琦需要关注的函数：
@@ -41,7 +41,7 @@ getAnimate 这个方法本身和资源没有关系。但是和上述函数有关
 关于物理精灵：
 	物理精灵一系列都已经封装好，但是目前我不知道有哪些需要做的类，但是英雄类已经ok。如果要加类的话基本都是仿照这个，里面有注释可以跟着看。
 	物理精灵类的继承顺序为：
-  
+
 	physics sprite -> Gameobject ->LifeObject ->hero
 ###添加新的游戏元素
 有生命的物体可以从LifeObject继承，然后仿写hero。

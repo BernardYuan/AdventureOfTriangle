@@ -29,7 +29,11 @@ bool HelloWorld::init()
     
     //Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-
+    
+    auto bg=Sprite::create("res/menu.png");
+    bg->setAnchorPoint(Vec2(0,0));
+    bg->setPosition(0,0);
+    this->addChild(bg, 0);
     auto startItem = cocos2d::MenuItemFont::create("START", CC_CALLBACK_1(HelloWorld::menuStartCallback, this));
     startItem->setFontName("fonts/Marker Felt.ttf");
     startItem->setFontSize(20);
