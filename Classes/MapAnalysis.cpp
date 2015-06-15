@@ -23,7 +23,7 @@ void MapAnalysis::initMap(char* levelName)
 	GameManager* gameManager = GameManager::getInstance();
 	//∂¡»°TiledµÿÕº◊ ‘¥
 	TMXTiledMap* tiledMap = TMXTiledMap::create(levelName);
-	gameManager->staticLayer->addChild(tiledMap, -1);
+	gameManager->bgLayer->addChild(tiledMap, -1);
 	//todo-- ”≤Ó±≥æ∞£¨¥À¥¶–ﬁ∏ƒ!TODO!‘∆≤ 
 	Sprite* bkpic = Sprite::create("background.png");
     bkpic->setAnchorPoint(Vec2(0,0));
