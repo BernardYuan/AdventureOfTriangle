@@ -5,6 +5,14 @@ Project For Software Engineering
 re-encapsulation of cocos2d::Sprite with Box2D physics engine.
 As Time is quite limited, only two classes are completed: Hero and Floor
 
+#!!!!!TODO!!!!!!
+- button need to be put on   
+- change the T’s A point  
+- give the bound of the map  
+- make a new map(longer! )   
+- death! (drop into water, encounter the obstacle, etc.) - and death scene   
+- sound effect(Alternative)
+- logo, title and buttons(Alternative)
 
 #Todo:
 ##杨家琦需要关注的函数：

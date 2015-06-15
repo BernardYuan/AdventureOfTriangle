@@ -38,7 +38,8 @@ void GameManager::initPhysicsWorld(float gravity) {
     world->SetContactListener(this);
     
     sceneX = Director::getInstance()->getVisibleSize().width / 2;
-    sceneY = Director::getInstance()->getVisibleSize().height / 2;
+    //sceneY = Director::getInstance()->getVisibleSize().height / 2;
+    //sceneY = 0;
 }
 
 void GameManager::step(float duration) {
@@ -63,9 +64,9 @@ void GameManager::step(float duration) {
     }
 
     Vec2 heroNowPostion = hero->getPosition();
-    //sceneX = sceneX + heroLastPostion.x - heroNowPostion.x;
+    sceneX = sceneX + heroLastPostion.x - heroNowPostion.x;
     //sceneY = sceneY + heroLastPostion.y - heroNowPostion.y;
-    //GameManager::getInstance()->bgLayer->setPosition(sceneX, sceneY);
+    GameManager::getInstance()->bgLayer->setPosition(sceneX, sceneY);
     log("X:%f Y:%f\n", heroNowPostion.x, heroNowPostion.y);
     
 }

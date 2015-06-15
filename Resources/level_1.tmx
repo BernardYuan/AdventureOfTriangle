@@ -13,6 +13,6 @@
   <object name="Floor" type="Floor" x="788" y="640" width="236" height="160"/>
  </objectgroup>
  <objectgroup name="HeroLayer" width="60" height="20">
-  <object name="Hero" type="Hero" x="0" y="0" width="64" height="64"/>
+  <object name="Hero" type="Hero" x="400" y="0" width="64" height="64"/>
  </objectgroup>
 </map>

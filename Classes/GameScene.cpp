@@ -36,7 +36,7 @@ bool GameScene::init()
 
     objLayer=Layer::create();
     GameManager::getInstance()->objLayer=objLayer;
-    staticLayer->addChild(objLayer,1);
+    bgLayer->addChild(objLayer,1); // Try to make "follow"
     
 	settingLayer = Layer::create(); //add an resume button to the setting layer
 	GameManager::getInstance()->settingLayer = settingLayer;
