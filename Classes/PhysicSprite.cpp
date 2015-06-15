@@ -43,8 +43,6 @@ void PhysicsSprite::initBody(float x, float y, b2Vec2* points, int count)  {
     body->SetUserData(this);
 }
 
-
-
 bool PhysicsSprite::init(float x, float y, float width, float height) {
     if (!Sprite::init()) {
         return

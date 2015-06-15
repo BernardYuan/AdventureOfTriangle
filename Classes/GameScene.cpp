@@ -1,14 +1,6 @@
 #include "GameScene.h"
 #include "GameManager.h"
 #include "HelloWorldScene.h"
-
-/*
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-//”—√ÀÕ≥º∆Õ∑
-#include "MobClickCpp.h"
-#endif
-*/
-
 USING_NS_CC;
 
 Scene* GameScene::createScene()
@@ -27,7 +19,6 @@ bool GameScene::init()
 		return false;
 	}
 	pause = false;
-    
     
 	//char levelStr[5];
 	//sprintf(levelStr, "level_%d_", level);
@@ -56,15 +47,20 @@ bool GameScene::init()
 	settingMenu->setPosition(0, 0);
 	settingLayer->addChild(settingMenu);
     
+    
+    auto pauseMenu = Menu::create();
+    pauseMenu->setAnchorPoint(Vec2(0,0));
+    pauseMenu->setPosition(1000,700);
+    objLayer->addChild(pauseMenu);
+    
     auto pauseBtn=MenuItemFont::create("PAUSE", CC_CALLBACK_1(GameScene::menuPauseCallback, this));
     pauseBtn->setFontName("fonts/Marker Felt.ttf");
     pauseBtn->setFontSize(15);
-    settingMenu->addChild(pauseBtn);
+    pauseMenu->addChild(pauseBtn);
     
     //form the Map
 	//MapAnalysis* mapAnalysis = MapAnalysis::getInstance();
 	//mapAnalysis->initMap(level);
-    
 	hero = GameManager::getInstance()->hero;
     
     /*
@@ -255,3 +251,13 @@ void GameScene::menuPauseCallback(Ref* ref)
 	pause = true;
 	settingLayer->setVisible(true);
 }
+
+void GameScene::settingBackCallback(cocos2d::Ref* ref) {
+    settingLayer->setVisible(false);
+    pause= false;
+}
+
+void GameScene::settingExitCallback(cocos2d::Ref* ref) {
+    Director::getInstance()->end();
+}
+

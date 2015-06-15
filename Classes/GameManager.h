@@ -14,6 +14,12 @@
 #include "Box2D/Box2D.h"
 #include "PhysicSprite.h"
 #include "Hero.h"
+enum GAME_STATIC
+{
+    WIN,
+    FAILED,
+    PLAYING
+};
 class GameManager :public cocos2d::Ref, public b2ContactListener
 {
 private:
@@ -21,7 +27,7 @@ private:
     cocos2d::Vector<PhysicsSprite*> _deleteSprites;
     b2World* world;
     
-    float sceneX;
+    float sceneX;   //position of the screen
     float sceneY;
     GameManager();
 public:
@@ -33,6 +39,7 @@ public:
 public:
     static GameManager* getInstance();
     static void destroyInstance();
+    
     ~GameManager();
     
     void initPhysicsWorld(float);   //setup the physics world
@@ -43,6 +50,7 @@ public:
     
     cocos2d::Animation* getAnimation(const char* src, float delay = 0.0f, unsigned int loops = 1U);
     cocos2d::Animate* getAnimate(const char* src, float delay = 0.0f, unsigned int loops = 1U);
+    
     void pushDeleteSprite(PhysicsSprite* sprite);
     
     virtual void BeginContact(b2Contact* contact);

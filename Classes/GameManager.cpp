@@ -61,13 +61,11 @@ void GameManager::step(float duration) {
         (*it)->removePhysicsSprite();
         it = _deleteSprites.erase(it);
     }
-    
 
     Vec2 heroNowPostion = hero->getPosition();
     sceneX = sceneX + heroLastPostion.x - heroNowPostion.x;
     sceneY = sceneY + heroLastPostion.y - heroNowPostion.y;
     GameManager::getInstance()->bgLayer->setPosition(sceneX, sceneY);
-
     
 }
 

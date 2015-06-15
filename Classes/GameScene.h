@@ -23,7 +23,6 @@ private:
     cocos2d::Layer* settingLayer;
     bool _left;
     bool _right;
-    
     Hero* hero;
 public:
     static cocos2d::Scene* createScene();
@@ -40,6 +39,8 @@ public:
     void setLeft(bool);
     
     
+    void settingBackCallback(cocos2d::Ref*);
+    void settingExitCallback(cocos2d::Ref*);
     void menuPauseCallback(cocos2d::Ref* );
     
 };
