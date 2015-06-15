@@ -7,7 +7,8 @@ AppDelegate::AppDelegate() {
 
 }
 
-AppDelegate::~AppDelegate() {
+AppDelegate::~AppDelegate() 
+{
 }
 
 //if you want a different context,just modify the value of glContextAttrs
@@ -48,6 +49,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // create a scene. it's an autorelease object
     auto scene = HelloWorld::createScene();
+    //need to be improved
     glview->setDesignResolutionSize(1024, 768, ResolutionPolicy::SHOW_ALL);
     // run
     director->runWithScene(scene);

@@ -32,15 +32,15 @@ bool GameScene::init()
 	
 	bgLayer = Layer::create();
 	GameManager::getInstance()->bgLayer = bgLayer;
-	staticLayer->addChild(bgLayer);
+	staticLayer->addChild(bgLayer,0);
 
     objLayer=Layer::create();
     GameManager::getInstance()->objLayer=objLayer;
-    staticLayer->addChild(objLayer);
+    staticLayer->addChild(objLayer,1);
     
 	settingLayer = Layer::create(); //add an resume button to the setting layer
 	GameManager::getInstance()->settingLayer = settingLayer;
-	staticLayer->addChild(settingLayer);
+	staticLayer->addChild(settingLayer,2);
 	settingLayer->setVisible(false);
 	
 	auto settingMenu = Menu::create();
@@ -48,6 +48,12 @@ bool GameScene::init()
 	settingMenu->setPosition(0, 0);
 	settingLayer->addChild(settingMenu);
     
+    auto backBtn=MenuItemFont::create("RESUME", CC_CALLBACK_1(GameScene::settingBackCallback, this));
+    backBtn->setFontName("fonts/Marker Felt.ttf");
+    backBtn->setFontSize(50);
+    backBtn->setAnchorPoint(Vec2(0.5,0.5));
+    backBtn->setPosition(500,350);
+    settingMenu->addChild(backBtn);
     
     auto pauseMenu = Menu::create();
     pauseMenu->setAnchorPoint(Vec2(0,0));
@@ -107,8 +113,8 @@ void GameScene::menuPauseCallback(Ref* ref)
 }
 
 void GameScene::settingBackCallback(cocos2d::Ref* ref) {
-    settingLayer->setVisible(false);
     pause= false;
+    settingLayer->setVisible(false);
 }
 
 void GameScene::settingExitCallback(cocos2d::Ref* ref) {
@@ -123,6 +129,16 @@ void GameScene::keyPressed(EventKeyboard::KeyCode code, Event* event) {
     }
     else if(code==EventKeyboard::KeyCode::KEY_UP_ARROW||code==EventKeyboard::KeyCode::KEY_W) {
         hero->jump();
+    }
+    else if(code==EventKeyboard::KeyCode::KEY_SPACE) {
+        if (pause) {
+            pause= false;
+            settingLayer->setVisible(false);
+        }
+        else {
+            pause = true;
+            settingLayer->setVisible(true);
+        }
     }
 }
 void GameScene::keyReleased(EventKeyboard::KeyCode code, Event* event) {
