@@ -1,6 +1,7 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
 #include "FinishScene.h"
+#include "SimpleAudioEngine.h"
 USING_NS_CC;
 
 AppDelegate::AppDelegate() {
@@ -46,9 +47,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     register_all_packages();
-
     // create a scene. it's an autorelease object
     auto scene = HelloWorld::createScene();
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("res/bgm0.mp3");
+    CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("res/bgm0.mp3", true);
     //need to be improved
     glview->setDesignResolutionSize(1024, 768, ResolutionPolicy::SHOW_ALL);
     // run

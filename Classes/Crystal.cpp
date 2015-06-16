@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include "GameObject.h"
 #include "Hero.h"
-#include "FinishScene.h"
+#include "WinScene.h"
 USING_NS_CC;
 
 bool Crystal::init(float x, float y, float width, float height)
@@ -33,7 +33,7 @@ void Crystal::PreSolve(GameObject* other, b2Contact* contact, const b2Manifold* 
     contact->SetEnabled(false);
     if (other->getType() == TYPE_HERO)
     {
-        auto reScene=TransitionCrossFade::create(0.3f,FinishScene::createScene());
+        auto reScene=TransitionCrossFade::create(0.3f,WinScene::createScene());
         Director::getInstance()->replaceScene(reScene);
         //hero->setUnbeatable(SD_FLOAT("spikes_float_unbeatable"));
     }

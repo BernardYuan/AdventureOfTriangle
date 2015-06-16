@@ -61,6 +61,11 @@ bool GameScene::init()
     exitBtn->setPosition(500,300);
     settingMenu->addChild(exitBtn);
     
+    auto restartBtn=MenuItemFont::create("RESTART",CC_CALLBACK_1(GameScene::settingRestartCallback, this));
+    restartBtn->setAnchorPoint(Vec2(0.5,0.5));
+    restartBtn->setPosition(500,250);
+    settingMenu->addChild(restartBtn);
+    
     
     auto pauseMenu = Menu::create();
     pauseMenu->setAnchorPoint(Vec2(0,0));
@@ -157,4 +162,14 @@ void GameScene::keyReleased(EventKeyboard::KeyCode code, Event* event) {
     else if(code==EventKeyboard::KeyCode::KEY_RIGHT_ARROW||code==EventKeyboard::KeyCode::KEY_D) {
         hero->moveStop();
     }
+}
+
+void GameScene::settingRestartCallback(cocos2d::Ref* ref) {
+    //auto scene = HelloWorld::createScene();
+    //Director::getInstance()->replaceScene(scene);
+    //Director::getInstance()->restart();
+    GameManager::destroyInstance();
+    Scene* scene = TransitionCrossFade::create(0.3f, HelloWorld::createScene());
+    Director::getInstance()->replaceScene(scene);
+
 }

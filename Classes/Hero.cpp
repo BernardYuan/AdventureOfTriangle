@@ -9,6 +9,7 @@
 #include "Hero.h"
 #include "GameManager.h"
 #include "HelloWorldScene.h"
+#include "FinishScene.h"
 USING_NS_CC;
 
 void Hero::initParam() {    //initialize the parameters
@@ -73,7 +74,7 @@ void Hero::dead() {     //dying
 void Hero::ended() {   //ended
     LifeObject::ended();
     //restart
-    auto restart = HelloWorld::createScene();
+    auto restart = FinishScene::createScene();
     Director::getInstance()->replaceScene(restart);
 }
 

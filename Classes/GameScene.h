@@ -41,6 +41,7 @@ public:
     
     void settingBackCallback(cocos2d::Ref*);
     void settingExitCallback(cocos2d::Ref*);
+    void settingRestartCallback(cocos2d::Ref*);
     void menuPauseCallback(cocos2d::Ref* );
     
     void keyPressed(EventKeyboard::KeyCode,Event*);
