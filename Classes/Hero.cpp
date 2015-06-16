@@ -38,6 +38,7 @@ void Hero::initParam() {    //initialize the parameters
                   TYPE_PRIZE |
                   TYPE_ARTICLE |
                   TYPE_WEAPON);
+    this->cocos2d::Node::setAnchorPoint(Vec2(0.5, 0.7));//make the AP in the middle of feet
     moveStop();
 }
 

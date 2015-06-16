@@ -12,9 +12,24 @@
      <object name="Floor" type="Floor" x="0" y="700" width="788" height="68"/>
      <object name="Floor" type="Floor" x="788" y="602" width="662" height="160"/>
      <object name="Floor" type="Floor" x="1662" y="472" width="312" height="22"/>
+     <object name="Floor" type="Floor" x="2182" y="310" width="78" height="65"/>
+     <object name="Floor" type="Floor" x="2260" y="310" width="866" height="458"/>
+     <object name="Floor" type="Floor" x="3126" y="671" width="1356" height="97"/>
+     <object name="Floor" type="Floor" x="4692" y="608" width="222" height="160"/>
+     <object name="Floor" type="Floor" x="5085" y="526" width="237" height="242"/>
+     <object name="Floor" type="Floor" x="5484" y="470" width="254" height="298"/>
+     <object name="Floor" type="Floor" x="6020" y="352" width="1106" height="416"/>
+     <object name="Floor" type="Floor" x="7406" y="352" width="242" height="100"/>
+     <object name="Floor" type="Floor" x="7648" y="352" width="872" height="416"/>
+     <object name="Floor" type="Floor" x="8520" y="670" width="1720" height="98"/>
      
+     <object name="Spikes" type="Spikes" x="0" y="768" width="10240" height="100"/>
+     <object name="Spikes" type="Spikes" x="1450" y="696" width="810" height="10"/>
+     <object name="Spikes" type="Spikes" x="8520" y="468" width="240" height="202"/>
+     
+     <object name="Gem" type="Gem" x="10000" y="506" width="64" height="64"/>
  </objectgroup>
  <objectgroup name="HeroLayer" width="60" height="20">
-     <object name="Hero" type="Hero" x="400" y="0" width="64" height="64"/>
+     <object name="Hero" type="Hero" x="200" y="0" width="64" height="64"/>
  </objectgroup>
 </map>
