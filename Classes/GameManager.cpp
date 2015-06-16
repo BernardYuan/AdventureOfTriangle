@@ -67,7 +67,13 @@ void GameManager::step(float duration) {
     Vec2 heroNowPostion = hero->getPosition();
     if(hero->moved == true)
     {
-        sceneX = sceneX + heroLastPostion.x - heroNowPostion.x;
+        float move_offset = heroLastPostion.x - heroNowPostion.x;
+        if(move_offset < 0)
+            if(heroNowPostion.x + sceneX >  Director::getInstance()->getVisibleSize().width * 3/4)
+                sceneX = sceneX + move_offset;
+        if(move_offset > 0)
+            if(heroNowPostion.x + sceneX <  Director::getInstance()->getVisibleSize().width * 1/4)
+                sceneX = sceneX + move_offset;
     }
     if(sceneX >= SD_FLOAT("level1_left_bound")) sceneX = SD_FLOAT("level1_left_bound");
     if(sceneX <= Director::getInstance()->getVisibleSize().width - SD_FLOAT("level1_right_bound"))
