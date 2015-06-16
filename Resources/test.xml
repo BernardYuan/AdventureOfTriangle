@@ -7,6 +7,9 @@
 	<key>jump_path_texture_off</key>		<string>Items/springboardUp.png</string>			<!--基本纹理-->
 	<key>jump_float_width</key>				<string>70</string>									<!--width-->
 	<key>jump_float_height</key>			<string>36</string>									<!--height-->
+<!--Boundary-->
+    <key>level1_left_bound</key>            <string>0</string>
+    <key>level1_right_bound</key>           <string>1024</string>
 <!--门-->
 	<key>door_path_texture</key>			<string>Items/door.png</string>			<!--基本纹理-->
 	<key>door_float_width</key>				<string>70</string>					<!--宽-->

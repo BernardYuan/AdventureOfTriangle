@@ -37,8 +37,9 @@ void GameManager::initPhysicsWorld(float gravity) {
     world = new b2World(b2Vec2(0, -gravity));
     world->SetContactListener(this);
     
-    sceneX = Director::getInstance()->getVisibleSize().width / 2;
+    //sceneX = Director::getInstance()->getVisibleSize().width / 2;
     //sceneY = Director::getInstance()->getVisibleSize().height / 2;
+    sceneX = 0;
     //sceneY = 0;
 }
 
@@ -65,8 +66,12 @@ void GameManager::step(float duration) {
 
     Vec2 heroNowPostion = hero->getPosition();
     sceneX = sceneX + heroLastPostion.x - heroNowPostion.x;
-    //sceneY = sceneY + heroLastPostion.y - heroNowPostion.y;
+    if(sceneX >= SD_FLOAT("level1_left_bound")) sceneX = SD_FLOAT("level1_left_bound");
+    if(sceneX <= SD_FLOAT("level1_right_bound") - Director::getInstance()->getVisibleSize().width)
+        sceneX = SD_FLOAT("level1_right_bound") - Director::getInstance()->getVisibleSize().width;
     GameManager::getInstance()->bgLayer->setPosition(sceneX, sceneY);
+    log("%f",SD_FLOAT("level1_left_bound"));
+    log("sceneX:%f",sceneX);
     log("X:%f Y:%f\n", heroNowPostion.x, heroNowPostion.y);
     
 }
