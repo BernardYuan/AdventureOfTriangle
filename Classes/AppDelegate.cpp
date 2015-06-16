@@ -1,6 +1,6 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
-
+#include "FinishScene.h"
 USING_NS_CC;
 
 AppDelegate::AppDelegate() {
@@ -53,7 +53,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     glview->setDesignResolutionSize(1024, 768, ResolutionPolicy::SHOW_ALL);
     // run
     director->runWithScene(scene);
-
+    log("%f\n%f\n",Director::getInstance()->getVisibleSize().width,Director::getInstance()->getVisibleSize().height);
     return true;
 }
 

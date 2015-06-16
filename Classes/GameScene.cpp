@@ -50,13 +50,13 @@ bool GameScene::init()
     
     auto backBtn=MenuItemFont::create("RESUME", CC_CALLBACK_1(GameScene::settingBackCallback, this));
     backBtn->setFontName("fonts/Marker Felt.ttf");
-    backBtn->setFontSize(50);
+    //backBtn->setFontSize(50);
     backBtn->setAnchorPoint(Vec2(0.5,0.5));
     backBtn->setPosition(500,350);
     settingMenu->addChild(backBtn);
     auto exitBtn=MenuItemFont::create("EXIT",CC_CALLBACK_1(GameScene::settingExitCallback, this));
     exitBtn->setFontName("fonts/Marker Felt.ttf");
-    exitBtn->setFontSize(50);
+    //exitBtn->setFontSize(50);
     exitBtn->setAnchorPoint(Vec2(0.5,0.5));
     exitBtn->setPosition(500,300);
     settingMenu->addChild(exitBtn);
