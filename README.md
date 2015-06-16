@@ -6,7 +6,7 @@ re-encapsulation of cocos2d::Sprite with Box2D physics engine.
 As Time is quite limited, only two classes are completed: Hero and Floor
 
 #!!!!!TODO!!!!!!
-- button need to be put on
+- button need to be put on done by Bernard
 - change the T’s A point  
 - give the bound of the map  
 - make a new map(longer! )

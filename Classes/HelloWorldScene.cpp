@@ -34,15 +34,20 @@ bool HelloWorld::init()
     bg->setAnchorPoint(Vec2(0,0));
     bg->setPosition(0,0);
     this->addChild(bg, 0);
-    auto startItem = cocos2d::MenuItemFont::create("START", CC_CALLBACK_1(HelloWorld::menuStartCallback, this));
+    
+    //auto T=Sprite::create();
+    
+    
+    
+    auto startItem = cocos2d::MenuItemFont::create("START", CC_CALLBACK_1(HelloWorld::menuStartCallback,this));
     startItem->setFontName("fonts/Marker Felt.ttf");
     startItem->setFontSize(20);
-    startItem->setAnchorPoint(Vec2(0,0));
-    startItem->setPosition(Vec2(0,0));
+    startItem->setAnchorPoint(Vec2(0.5,0.5));
+    startItem->setPosition(Vec2(512,300));
     auto menu = Menu::create(startItem, NULL);
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
-
+    
     /////////////////////////////
     // 3. add your codes below...
 

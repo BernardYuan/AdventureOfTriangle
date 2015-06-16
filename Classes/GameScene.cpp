@@ -54,15 +54,24 @@ bool GameScene::init()
     backBtn->setAnchorPoint(Vec2(0.5,0.5));
     backBtn->setPosition(500,350);
     settingMenu->addChild(backBtn);
+    auto exitBtn=MenuItemFont::create("EXIT",CC_CALLBACK_1(GameScene::settingExitCallback, this));
+    exitBtn->setFontName("fonts/Marker Felt.ttf");
+    exitBtn->setFontSize(50);
+    exitBtn->setAnchorPoint(Vec2(0.5,0.5));
+    exitBtn->setPosition(500,300);
+    settingMenu->addChild(exitBtn);
+    
     
     auto pauseMenu = Menu::create();
     pauseMenu->setAnchorPoint(Vec2(0,0));
-    pauseMenu->setPosition(1000,700);
-    objLayer->addChild(pauseMenu);
+    pauseMenu->setPosition(Director::getInstance()->getVisibleSize().width-150,Director::getInstance()->getVisibleSize().height-50);
+    staticLayer->addChild(pauseMenu);
     
     auto pauseBtn=MenuItemFont::create("PAUSE", CC_CALLBACK_1(GameScene::menuPauseCallback, this));
     pauseBtn->setFontName("fonts/Marker Felt.ttf");
     pauseBtn->setFontSize(15);
+    //pauseBtn->setAnchorPoint(Vec2(0,0));
+    //pauseBtn->setPosition(Vec2(0,0));
     pauseMenu->addChild(pauseBtn);
     
     //form the Map
