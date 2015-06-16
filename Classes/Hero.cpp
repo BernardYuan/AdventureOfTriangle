@@ -12,6 +12,7 @@
 USING_NS_CC;
 
 void Hero::initParam() {    //initialize the parameters
+    moved=false;
     startTag=true;
     jumpCount=0;
     //setCoin(0);
@@ -96,6 +97,7 @@ void Hero::moveStop() {   //stop moving
     Animate* animate = GameManager::getInstance()->getAnimate(SD_CHARS("hero_animate_stop"), SD_FLOAT("hero_float_stop_speed"));
     this->stopAllActions();
     this->runAction(RepeatForever::create(animate));
+    moved = false;
 }
 
 void Hero::moveLeft() { //moving left
@@ -110,6 +112,7 @@ void Hero::moveLeft() { //moving left
     Animate* animate = GameManager::getInstance()->getAnimate(SD_CHARS("hero_animate_walk_left"), SD_FLOAT("hero_float_walk_left_speed"));
     this->stopAllActions();
     this->runAction(RepeatForever::create(animate));
+    moved = true;
 }
 
 void Hero::moveRight() {  //moving right
@@ -124,6 +127,7 @@ void Hero::moveRight() {  //moving right
     Animate* animate = GameManager::getInstance()->getAnimate(SD_CHARS("hero_animate_walk_right"), SD_FLOAT("hero_float_walk_right_speed"));
     this->stopAllActions();
     this->runAction(RepeatForever::create(animate));
+    moved = true;
 }
 
 void Hero::jump() {  //jumping
@@ -136,7 +140,7 @@ void Hero::jump() {  //jumping
     b2Vec2 vec=this->getBody()->GetLinearVelocity();
     vec.y=spring;
     this->getBody()->SetLinearVelocity(vec);
-    
+    moved = true;
     jumpCount++;
 }
 

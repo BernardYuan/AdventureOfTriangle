@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="1024" tileheight="768" nextobjectid="1">
- <tileset firstgid="1" name="level_1" tilewidth="1024" tileheight="768">
-  <image source="level_1.png" width="1024" height="768"/>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="1" tilewidth="1024" tileheight="768" nextobjectid="1">
+ <tileset firstgid="1" name="map_01" tilewidth="1024" tileheight="768">
+  <image source="level_1.png" width="10240" height="768"/>
  </tileset>
- <layer name="bk" width="1" height="1">
+ <layer name="块层 1" width="10" height="1">
   <data encoding="base64" compression="zlib">
-   eJxjZGBgAAAACAAC
+   eJwNw4kNACAMBKDzrbr/wEJCS9IdTpfb8nh9fgOYADg=
   </data>
- </layer>
  <objectgroup name="BrickLayer" width="60" height="20">
   <object name="Floor" type="Floor" x="0" y="700" width="788" height="100"/>
   <object name="Floor" type="Floor" x="788" y="640" width="236" height="160"/>
  </objectgroup>
  <objectgroup name="HeroLayer" width="60" height="20">
-  <object name="Hero" type="Hero" x="100" y="0" width="64" height="64"/>
+  <object name="Hero" type="Hero" x="400" y="0" width="64" height="64"/>
  </objectgroup>
+ </layer>
 </map>

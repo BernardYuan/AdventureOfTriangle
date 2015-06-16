@@ -29,6 +29,7 @@ protected:
     /*速度 speed*/
     CC_SYNTHESIZE(float , speed, Speed);
 public:
+    bool moved;     //used for scroll map
     virtual void initParam();
     virtual bool init(float x, float y, float width, float height) override;
     CREATE_FUNC_4(Hero, float, float, float, float);
