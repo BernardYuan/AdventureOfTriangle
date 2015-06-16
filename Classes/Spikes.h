@@ -22,6 +22,7 @@ public:
     CREATE_FUNC_4(Spikes, float, float, float, float);
     
     virtual void PreSolve(GameObject* other, b2Contact* contact, const b2Manifold* oldManifold);
+    //virtual void BeginContact(GameObject* other, b2Contact* contact);
 };
 
 #endif /* defined(__TestDemo__Spikes__) */

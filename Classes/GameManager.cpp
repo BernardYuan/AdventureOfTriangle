@@ -46,7 +46,7 @@ void GameManager::initPhysicsWorld(float gravity) {
 void GameManager::step(float duration) {
     Vec2 heroLastPostion = hero->getPosition();
     
-    world->Step(duration, 8, 3);
+    world->Step(duration, 20, 20);
 
     for(b2Body* body=world->GetBodyList(); body; body=body->GetNext())
     {

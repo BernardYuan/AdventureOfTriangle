@@ -27,11 +27,23 @@ bool Spikes::init(float x, float y, float width, float height)
 
 void Spikes::PreSolve(GameObject* other, b2Contact* contact, const b2Manifold* oldManifold)
 {
-    contact->SetEnabled(false);
+    contact->SetEnabled(true);
     if (other->getType() == TYPE_HERO)
     {
         Hero* hero = (Hero*)other;
-        hero->setHp(-1);
+        //hero->setHp(-1);
+        hero->dead();
         //hero->setUnbeatable(SD_FLOAT("spikes_float_unbeatable"));
     }
 }
+
+/*void Spikes::BeginContact(GameObject* other, b2Contact* contact) {
+    contact->SetEnabled(true);
+    if (other->getType() == TYPE_HERO)
+    {
+        Hero* hero = (Hero*)other;
+        //hero->setHp(-1);
+        hero->dead();
+        //hero->setUnbeatable(SD_FLOAT("spikes_float_unbeatable"));
+    }
+}*/

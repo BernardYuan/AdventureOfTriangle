@@ -25,8 +25,8 @@
      
      <object name="Spikes" type="Spikes" x="0" y="768" width="10240" height="100"/>
      <object name="Spikes" type="Spikes" x="1450" y="696" width="810" height="10"/>
-     <object name="Spikes" type="Spikes" x="8520" y="468" width="240" height="202"/>
-     
+     <object name="Spikes" type="Spikes" x="8520" y="555" width="46" height="202"/>
+     <object name="Spikes" type="Spikes" x="8586" y="468" width="174" height="202"/>
      <object name="Gem" type="Gem" x="10000" y="506" width="64" height="64"/>
  </objectgroup>
  <objectgroup name="HeroLayer" width="60" height="20">

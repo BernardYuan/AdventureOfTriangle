@@ -74,7 +74,7 @@
 	<key>hero_float_walk_left_speed</key>	<string>0.08</string>			
 
 	<key>hero_animate_dead</key>			<string>hero_dead</string>		<!--死亡动画名-->
-	<key>hero_float_dead_speed</key>		<string>0.4</string>				<!--死亡动画播放速度-->
+	<key>hero_float_dead_speed</key>		<string>0.2</string>				<!--死亡动画播放速度-->
 	<key>hero_animate_stop</key>			<string>hero_stop</string>			<!--静止动画名-->
 	<key>hero_float_stop_speed</key>		<string>0.7</string>			<!--静止动画播放速度-->
 	<key>hero_float_speed</key>				<string>2</string>				<!--行走速度-->

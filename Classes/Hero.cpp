@@ -61,7 +61,6 @@ bool Hero::init(float x, float y, b2Vec2* points, int count) {      //alternativ
 
 void Hero::dead() {     //dying
     LifeObject::dead();
-    
     setMask(TYPE_BRICK);
     this->moveStop();
     Animate* animate = GameManager::getInstance()->getAnimate(SD_CHARS("hero_animate_dead"), SD_FLOAT("hero_float_dead_speed"));

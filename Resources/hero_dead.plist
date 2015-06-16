@@ -7,13 +7,13 @@
 		<key>hero_dead0000</key>
 		<dict>
 			<key>frame</key>
-			<string>{{2,2},{58,64}}</string>
+			<string>{{62,2},{56,64}}</string>
 			<key>offset</key>
-			<string>{1,0}</string>
+			<string>{2,0}</string>
 			<key>rotated</key>
-			<false/>
+			<true/>
 			<key>sourceColorRect</key>
-			<string>{{4,0},{58,64}}</string>
+			<string>{{6,0},{56,64}}</string>
 			<key>sourceSize</key>
 			<string>{64,64}</string>
 		</dict>
