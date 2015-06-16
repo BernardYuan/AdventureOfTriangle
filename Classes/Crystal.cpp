@@ -21,6 +21,7 @@ bool Crystal::init(float x, float y, float width, float height)
     }
     //atk = SD_INT("spikes_int_atk");
     
+    this->setTexture(SD_CHARS("gem_path_texture"));
     this->getBody()->SetType(b2_staticBody);
     this->setType(TYPE_BRICK);
     this->setMask(TYPE_HERO);

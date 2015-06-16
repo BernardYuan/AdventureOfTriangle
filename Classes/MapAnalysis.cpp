@@ -3,6 +3,8 @@
 #include "Floor.h"
 #include "Hero.h"
 #include "StaticData.h"
+#include "Spikes.h"
+#include "Crystal.h"
 
 USING_NS_CC;
 
@@ -47,6 +49,16 @@ void MapAnalysis::initMap(char* levelName)
 			Floor* b = Floor::create(x, y, w, h);
 			gameManager->bgLayer->addChild(b);
 		}
+        else if (brick.at("name").asString() == "Spikes")//∑Ê¥Ã
+        {
+            Spikes* sk = Spikes::create(x, y, w, h);
+            gameManager->bgLayer->addChild(sk);
+        }
+        else if (brick.at("name").asString() == "Gem")//Gem
+        {
+            Crystal* c = Crystal::create(x, y, w, h);
+            gameManager->bgLayer->addChild(c);
+        }
     }
 /*		if (brick.at("name").asString() == "Brick")//Ã®Ω◊
 		{

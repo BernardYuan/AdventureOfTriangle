@@ -7,12 +7,14 @@
   <data encoding="base64" compression="zlib">
    eJwNw4kNACAMBKDzrbr/wEJCS9IdTpfb8nh9fgOYADg=
   </data>
+ </layer>
  <objectgroup name="BrickLayer" width="60" height="20">
-  <object name="Floor" type="Floor" x="0" y="700" width="788" height="100"/>
-  <object name="Floor" type="Floor" x="788" y="640" width="236" height="160"/>
+     <object name="Floor" type="Floor" x="0" y="700" width="788" height="68"/>
+     <object name="Floor" type="Floor" x="788" y="602" width="662" height="160"/>
+     <object name="Floor" type="Floor" x="1662" y="472" width="312" height="22"/>
+     
  </objectgroup>
  <objectgroup name="HeroLayer" width="60" height="20">
-  <object name="Hero" type="Hero" x="400" y="0" width="64" height="64"/>
+     <object name="Hero" type="Hero" x="400" y="0" width="64" height="64"/>
  </objectgroup>
- </layer>
 </map>
